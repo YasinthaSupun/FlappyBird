@@ -1,10 +1,14 @@
-using System;
 using UnityEngine;
 
-public class AddScore : MonoBehaviour
+namespace FlappyBird
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    public class AddScore : MonoBehaviour
     {
-        Score.score ++;
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Score.score ++;
+        }
     }
+
 }
+

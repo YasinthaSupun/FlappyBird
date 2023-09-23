@@ -1,19 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Score : MonoBehaviour
+namespace FlappyBird
 {
-    public static int score = 0;
-    
-    void Start()
+    public class Score : MonoBehaviour
     {
-        score = 0;
-    }
+        public static int score = 0;
     
-    void Update()
-    {
-        GetComponent<TMP_Text>().text = score.ToString();
+        void Start()
+        {
+            score = 0;
+        }
+    
+        void Update()
+        {
+            GetComponent<TMP_Text>().text = score.ToString();
+        }
     }
+
 }
+

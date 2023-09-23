@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class MovePipe : MonoBehaviour
+namespace FlappyBird
 {
-    [SerializeField] private float speed;
-    
-    void Update()
+    public class MovePipe : MonoBehaviour
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        [SerializeField] private float speed;
+    
+        void Update()
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
     }
+
 }
+

@@ -1,6 +1,11 @@
 using UnityEngine;
 
-public interface IPooledObject
+namespace FlappyBird
 {
-    void OnObjectSpawn();
+    public interface IPooledObject
+    {
+        void OnObjectSpawn();
+    }
+
 }
+

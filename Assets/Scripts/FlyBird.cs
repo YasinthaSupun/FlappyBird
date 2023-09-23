@@ -1,27 +1,31 @@
-using System;
 using UnityEngine;
 
-public class FlyBird : MonoBehaviour
+namespace FlappyBird
 {
-    [SerializeField] private float velocity = 1;
-    [SerializeField] private GameManager gameManager;
-    private Rigidbody2D rb;
-    
-    void Start()
+    public class FlyBird : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
+        [SerializeField] private float velocity = 1;
+        [SerializeField] private GameManager gameManager;
+        private Rigidbody2D rb;
     
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        void Start()
         {
-            rb.velocity = Vector2.up * velocity;
+            rb = GetComponent<Rigidbody2D>();
+        }
+    
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                rb.velocity = Vector2.up * velocity;
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            gameManager.GameOver();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        gameManager.GameOver();
-    }
 }
+
